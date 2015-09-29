@@ -7,9 +7,12 @@
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <script src="phonegap.js"></script>
-  <link rel="stylesheet" href="_css/sagesurvey.css">
-  <link rel="stylesheet" href="_css/sagesurvey.jqmt.min.css">
-  <link rel="stylesheet" href="_css/jquery.mobile.icons.min.css">
+  <!--<link rel="stylesheet" href="_css/sagesurvey.css">-->
+  <link rel="stylesheet" href="http://infolnx7.mccinfo.net/~repaschall/SageSurvey/_css/sagesurvey.css">  
+  <!--<link rel="stylesheet" href="_css/sagesurvey.jqmt.min.css">-->
+  <link rel="stylesheet" href="http://infolnx7.mccinfo.net/~repaschall/SageSurvey/_css/sagesurvey.jqmt.min.css">  
+  <!--<link rel="stylesheet" href="_css/jquery.mobile.icons.min.css">-->
+  <link rel="stylesheet" href="http://infolnx7.mccinfo.net/~repaschall/SageSurvey/_css/jquery.mobile.icons.min.css">  
   <title>Sage Customer Survey</title>
 </head>
 <body>
@@ -26,11 +29,12 @@
     <div data-role="content">      
 	     <h2>Sage Bistro Customer Survey</h2>
 		 <br>
-	<form method="post" action="http://www.mccinfo.net/webresources/cgi-bin/formmail.asp">
-		<input name="recipient" type="hidden" value="abrownii@mccneb.edu">
-		<input name="redirect" type="hidden" value="http://www.mccinfo.net/abrownii/SageSurvey/response.html" />
-		<input type="hidden" name="subject" value="MCC Sage Bistro Customer Survey" />
+		<!--<form method="post" action="http://www.mccinfo.net/webresources/cgi-bin/formmail.asp">
+		<!--<input name="recipient" type="hidden" value="repaschall@mccneb.edu">-->
+		<!--<input name="redirect" type="hidden" value="http://www.mccinfo.net/repaschall/SageSurvey/response.html" />-->
+		<!--<input type="hidden" name="subject" value="MCC Sage Bistro Customer Survey" />-->
 
+<form action="http://infolnx7.mccinfo.net/~repaschall/SageSurvey/bistrosurvey_insert.php" method="post">
 			<div data-role="fieldcontain">
 				<label for="meal_rate">How would you rate your meal today?</label>
 				<select name="meal_rate" id="meal_rate">
