@@ -1,93 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">	
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  <script src="phonegap.js"></script>
-  <link rel="stylesheet" href="_css/sagesurvey.css">
-  <link rel="stylesheet" href="_css/sagesurvey.jqmt.min.css">
-  <link rel="stylesheet" href="_css/jquery.mobile.icons.min.css">
-  <title>Sage Customer Survey</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">	
+	<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="sagesurvey.css">
+	<link rel="stylesheet" href="sagesurvey.jqmt.min.css">
+	<link rel="stylesheet" href="jquery.mobile.icons.min.css">
+	<link rel="apple-touch-icon" href="touch-icon-iphone.png" /> 
+	<link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png" /> 
+	<link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png" />
+	<script src="jquery-1.11.3.min.js"></script>
+	<script src="jquery.mobile-1.4.5.min.js"></script> 
+	<script src="phonegap.js"></script>
+	<title>Sage Customer Survey</title>
 </head>
 <body>
 <!-- Art Brown
      index.html
      MCC Sage Customer Survey
-     08.22.15
+     Revised: 11.12.15
 -->
 <div data-role="page" id="homePage">
     <div data-role="header" data-position="fixed" data-fullscreen="true">
-        <img src="_images/SageBistroHeader.png"  width="295" height="78" alt="Sage Logo" />
+        <img src="images/SageBistroHeader.png"  width="295" height="78" alt="Sage Logo" />
     </div><!-- closing header div -->
 
     <div data-role="content">      
 	     <h2>Sage Bistro Customer Survey</h2>
+		 <p>Thank you for joining us at the Sage, out student run bistro. We appreciate you giving us an opportunity to learn through real world experience.</p>
 		 <br>
 	<form method="post" action="http://www.mccinfo.net/webresources/cgi-bin/formmail.asp">
 		<input name="recipient" type="hidden" value="abrownii@mccneb.edu">
 		<input name="redirect" type="hidden" value="http://www.mccinfo.net/abrownii/SageSurvey/response.html" />
 		<input type="hidden" name="subject" value="MCC Sage Bistro Customer Survey" />
-
-			<div data-role="fieldcontain">
-				<label for="meal_rate">How would you rate your meal today?</label>
-				<select name="meal_rate" id="meal_rate">
-					<option value="1 – Excellent">5 – Excellent</option>
-					<option value="2 – Good">4 – Good</option>
-					<option value="3 – Fair">3 – Fair</option>
-					<option value="4 – Needs Work">2 – Needs Work</option> 
-					<option value="5 – Poor">1 – Poor</option> 
-				</select>
+			
+			<h3>Food Evaluation</h3>
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Taste/Flavor:</legend>
+				  <label for="tasteexcellent">Excellent</label>
+				  <input type="radio" name="taste" id="tasteexcellent" value="excellent">
+				  <label for="tastegood">Good</label>
+				  <input type="radio" name="taste" id="tastegood" value="good">
+				  <label for="tastefair">Fair</label>
+				  <input type="radio" name="taste" id="tastefair" value="fair">
+				  <label for="tastepoor">Poor</label>
+				  <input type="radio" name="taste" id="tastepoor" value="poor">
+				</fieldset>
 			</div>
 			
-			<div data-role="fieldcontain">
-				<label for="service_rate">How would you rate your service today?</label>
-				<select name="service_rate" id="service_rate">
-					<option value="1 – Excellent">5 – Excellent</option>
-					<option value="2 – Good">4 – Good</option>
-					<option value="3 – Fair">3 – Fair</option>
-					<option value="4 – Needs Work">2 – Needs Work</option> 
-					<option value="5 – Poor">1 – Poor</option>
-				</select>
+					
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Temperature:</legend>
+				  <label for="temperatureexcellent">Excellent</label>
+				  <input type="radio" name="temperature" id="temperatureexcellent" value="excellent">
+				  <label for="temperaturegood">Good</label>
+				  <input type="radio" name="temperature" id="temperaturegood" value="good">
+				  <label for="temperaturefair">Fair</label>
+				  <input type="radio" name="temperature" id="temperaturefair" value="fair">
+				  <label for="temperaturepoor">Poor</label>
+				  <input type="radio" name="temperature" id="temperaturepoor" value="poor">
+				</fieldset>
 			</div>
 			
-			<div data-role="fieldcontain">
-				<label for="overall_exp">How would you rate overall experience today?</label>
-				<select name="overall_exp" id="overall_exp">
-					<option value="1 – Excellent">5 – Excellent</option>
-					<option value="2 – Good">4 – Good</option>
-					<option value="3 – Fair">3 – Fair</option>
-					<option value="4 – Needs Work">2 – Needs Work</option> 
-					<option value="5 – Poor">1 – Poor</option> 
-				</select>
-			</div>
-
-			<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup"  data-type="horizontal">
-					<legend>Would you recommend this restaurant to a friend?</legend>
-					<input type="checkbox" name="recommend_rest" id="yes" value="Yes">
-					<label for="yes">Yes</label>
-					<input type="checkbox" name="recommend_rest" id="no" value="No">
-					<label for="no">No</label>   
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Timing:</legend>
+				  <label for="timingexcellent">Excellent</label>
+				  <input type="radio" name="timing" id="timingexcellent" value="excellent">
+				  <label for="timinggood">Good</label>
+				  <input type="radio" name="timing" id="timinggood" value="good">
+				  <label for="timingfair">Fair</label>
+				  <input type="radio" name="timing" id="timingfair" value="fair">
+				  <label for="timingpoor">Poor</label>
+				  <input type="radio" name="timing" id="timingpoor" value="poor">
 				</fieldset>
 			</div>
 
-			<div data-role="fieldcontain">
+			
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Presentation:</legend>
+				  <label for="presentationexcellent">Excellent</label>
+				  <input type="radio" name="presentation" id="presentationexcellent" value="excellent">
+				  <label for="presentationgood">Good</label>
+				  <input type="radio" name="presentation" id="presentationgood" value="good">
+				  <label for="presentationfair">Fair</label>
+				  <input type="radio" name="presentation" id="presentationfair" value="fair">
+				  <label for="presentationpoor">Poor</label>
+				  <input type="radio" name="presentation" id="presentationpoor" value="poor">
+				</fieldset>
+			</div>
+			
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>The overall food experience:</legend>
+				  <label for="foodexperienceexcellent">Excellent</label>
+				  <input type="radio" name="foodexperience" id="foodexperienceexcellent" value="excellent">
+				  <label for="foodexperiencegood">Good</label>
+				  <input type="radio" name="foodexperience" id="foodexperiencegood" value="good">
+				  <label for="foodexperiencefair">Fair</label>
+				  <input type="radio" name="foodexperience" id="foodexperiencefair" value="fair">
+				  <label for="foodexperiencepoor">Poor</label>
+				  <input type="radio" name="foodexperience" id="foodexperiencepoor" value="poor">
+				</fieldset>
+			</div>
+			
+			<h3>Service Evaluation</h3>
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Greeting:</legend>
+				  <label for="greetingexcellent">Excellent</label>
+				  <input type="radio" name="greeting" id="greetingexcellent" value="excellent">
+				  <label for="greetinggood">Good</label>
+				  <input type="radio" name="greeting" id="greetinggood" value="good">
+				  <label for="greetingfair">Fair</label>
+				  <input type="radio" name="greeting" id="greetingfair" value="fair">
+				  <label for="greetingpoor">Poor</label>
+				  <input type="radio" name="greeting" id="greetingpoor" value="poor">
+				</fieldset>
+			</div>
+			
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Server's Menu Knowledge:</legend>
+				  <label for="knowledgeexcellent">Excellent</label>
+				  <input type="radio" name="knowledge" id="knowledgeexcellent" value="excellent">
+				  <label for="knowledgegood">Good</label>
+				  <input type="radio" name="knowledge" id="knowledgegood" value="good">
+				  <label for="knowledgefair">Fair</label>
+				  <input type="radio" name="knowledge" id="knowledgefair" value="fair">
+				  <label for="knowledgepoor">Poor</label>
+				  <input type="radio" name="knowledge" id="knowledgepoor" value="poor">
+				</fieldset>
+			</div>
+			
+			
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Attentiveness of Server:</legend>
+				  <label for="attentivenessexcellent">Excellent</label>
+				  <input type="radio" name="attentiveness" id="attentivenessexcellent" value="excellent">
+				  <label for="attentivenessgood">Good</label>
+				  <input type="radio" name="attentiveness" id="attentivenessgood" value="good">
+				  <label for="attentivenessfair">Fair</label>
+				  <input type="radio" name="attentiveness" id="attentivenessfair" value="fair">
+				  <label for="attentivenesspoor">Poor</label>
+				  <input type="radio" name="attentiveness" id="attentivenesspoor" value="poor">
+				</fieldset>
+			</div>
+			
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Appearance of Server:</legend>
+				  <label for="appearanceexcellent">Excellent</label>
+				  <input type="radio" name="appearance" id="appearanceexcellent" value="excellent">
+				  <label for="appearancegood">Good</label>
+				  <input type="radio" name="appearance" id="appearancegood" value="good">
+				  <label for="appearancefair">Fair</label>
+				  <input type="radio" name="appearance" id="appearancefair" value="fair">
+				  <label for="appearancepoor">Poor</label>
+				  <input type="radio" name="appearance" id="appearancepoor" value="poor">
+				</fieldset>
+			</div>
+			
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Timely food and beverage delivery:</legend>
+				  <label for="timelyexcellent">Excellent</label>
+				  <input type="radio" name="timely" id="timelyexcellent" value="excellent">
+				  <label for="timelygood">Good</label>
+				  <input type="radio" name="timely" id="timelygood" value="good">
+				  <label for="timelyfair">Fair</label>
+				  <input type="radio" name="timely" id="timelyfair" value="fair">
+				  <label for="timelypoor">Poor</label>
+				  <input type="radio" name="timely" id="timelypoor" value="poor">
+				</fieldset>
+			</div>
+			
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>The overall dining experience:</legend>
+				  <label for="experienceexcellent">Excellent</label>
+				  <input type="radio" name="experience" id="experienceexcellent" value="excellent">
+				  <label for="experiencegood">Good</label>
+				  <input type="radio" name="experience" id="experiencegood" value="good">
+				  <label for="experiencefair">Fair</label>
+				  <input type="radio" name="experience" id="experiencefair" value="fair">
+				  <label for="experiencepoor">Poor</label>
+				  <input type="radio" name="experience" id="experiencepoor" value="poor">
+				</fieldset>
+			</div>
+			
+		
+			<div class="ui-field-contain">
+				<label for="comment">Your Comments:</label>
+				<textarea name="comments" id="comments"></textarea>
+			</div>
+
+			<div class="ui-field-contain">
+				<label for="table">Table #: </label>
+				<input type="text" name="table" id="table" value="" />
+			</div>	
+			
+			<div class="ui-field-contain">
 				<label for="bname">Name: </label>
 				<input type="text" name="bname" id="bname" value="" />
 			</div>
-			<div data-role="fieldcontain">
+			<div class="ui-field-contain">
 				<label for="email">Email: </label>
 				<input type="text" name="email" id="email" value="" />
 			</div>
 			<input type="submit" name="submit" value="Send" />
+			<br>
 	</form>
 	</div> <!-- closing content div -->
 
-	<div data-role="footer" data-position="fixed">
-		<img src="_images/mcc-logo-bistro.png" width="155" height="42" alt="MCC Logo"/>
+	<div data-role="footer" data-position="fixed" data-fullscreen="true">
+		<img src="images/mcc-logo-bistro.png" width="155" height="42" alt="MCC Logo"/>
 	</div><!-- closing footer div -->
 	
 </div><!-- closing page div -->
